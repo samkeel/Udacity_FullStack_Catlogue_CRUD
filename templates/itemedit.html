@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+{% block content %}
+
+<section id="content">
+    <h2>Edit</h2>
+
+    <form action="#" method="POST">
+        <p>
+            <label for="genre">
+                <span>Genre:</span>
+            </label>
+            <select id="genre" name="usergenre">
+                {% for n in side_nav %}
+                <option value="{{n.cat_id}}">{{n.cat_name}}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <p>
+            <label for="title">
+                <span>Movie title:</span>
+            </label>
+            <input type="text" id="title" name="usertitle" value="{{item.movie_title}}">
+        </p>
+        <p>
+            <label for="synopsis">
+                <span>Synopsis:</span>
+            </label>
+            <br>
+            <textarea input type="text" id="synopsis" name="usersynopsis" rows="10" cols="50">
+                {{item.movie_description}}</textarea>
+        </p>
+        <section id="back_element">
+            <p>
+                <button type="submit" id="submit">Submit</button>
+                <button type="button">
+                    <a href="{{url_for('delItem', id=item.item_id)}}">Delete</a>
+                </button>
+                <button><a href="{{url_for('itemDetails', id=item.item_id)}}">Back</a></button>
+            </p>
+        </section>
+    </form>
+</section>
+
+</section>
+{% include 'sidenav.html' %}
+{% endblock %}

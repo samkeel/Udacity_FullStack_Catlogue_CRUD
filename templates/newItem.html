@@ -1,0 +1,55 @@
+{% extends "index.html" %}
+{% block content %}
+
+<section id="content">
+    <h2>New</h2>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <strong> {{ message }} </strong>                
+        {% endfor %}
+    {% endif %}
+    {% endwith %} 
+
+    <form action="#" method="POST">
+        <p>
+            <label for="genre">
+                <span>Genre:</span>
+            </label>
+            <select id="genre" name="usergenre">
+                {% for n in side_nav %}
+                <option value="{{n.cat_id}}">{{n.cat_name}}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <p>
+            <label for="title">
+                <span>Movie title:</span>
+            </label>
+            <input type="text" id="title" name="usertitle">
+        </p>
+        <p>
+            <label for="synopsis">
+                <span>Synopsis:</span>
+            </label>
+            <br>
+            <textarea input type="text" id="synopsis" name="usersynopsis" rows="10" cols="50"></textarea>
+        </p>
+        <section id="back_element">
+            <p>
+                {%if 'username' in session %}
+                    <button type="submit" id="submit">Submit</button>
+                {% else %}
+                    <button disabled="true">Submit</button>
+                {% endif %}  
+                <button><a href="{{url_for('showMain')}}">Cancel</a></button>
+            </p>
+        </section>
+    </form>
+
+</section>
+
+</section>
+{% include 'sidenav.html' %}
+{% endblock %}

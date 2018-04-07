@@ -1,0 +1,96 @@
+#add_new_form {
+    padding: 10px;
+}
+
+
+#back_element {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+body {
+    display: flex;
+    font-family: "Roboto", sans-serif;
+    margin: auto;
+    min-height: 100vh;
+    flex-direction: column;
+    max-width: 750px;
+}
+
+
+button:disabled, button[disabled]{
+    background-color: #cccccc;
+}
+
+
+#cat_list {
+    padding: 0px;
+    margin-top:  5px;
+}
+
+
+#categories_list {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+
+#child_elements {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+
+#content {
+    padding: 10px;
+}
+
+
+#footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #ced7db;
+}
+
+
+#header {
+    display: flex;
+    text-align: center;
+    background-color: #ced7db;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+
+#main {
+    display: flex;
+    flex-grow: 1;    
+}
+
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+
+#new_element {
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+#side_nav {
+    display: flex;
+    flex: 1 1 0%;
+    order: -1;
+    background-color: #9da6a9;
+    padding: 10px;   
+    flex-direction: column;
+    max-width: 115px;
+}

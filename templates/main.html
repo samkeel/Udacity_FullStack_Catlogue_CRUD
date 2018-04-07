@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% block content %}
+
+<section id="content">
+    <h2>Udacity Movie Catalogue App</h2>
+
+    {% with messages = get_flashed_messages() %} 
+        {% if messages %} 
+            {% for message in messages %}       
+                <strong> {{ message }} </strong>
+            {% endfor %} 
+        {% endif %} 
+    {% endwith %}
+
+    <p>
+        Select a prepopulated Genre from the menu on the left or create a new movie genre and start populating with all your favourite
+        movies.
+    </p>
+</section>
+{% include 'sidenav.html' %}
+{% endblock %}

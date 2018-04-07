@@ -1,0 +1,11 @@
+<aside id="side_nav">
+    <h2>Categories</h2>
+    <div id="cat_list">
+        <a href="{{url_for('newCatalogue')}}">New category</a>
+        {% for i in side_nav %}
+        <a href="{{url_for('subCat', id=i.cat_id)}}">
+            <p>{{i.cat_name}}</p>
+        </a>
+        {% endfor %}
+    </div>
+</aside>

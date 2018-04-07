@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% block content %}
+
+<section id="content">
+    <h2>{{subs.movie_title}}</h2>
+    <p>{{subs.movie_description}}</p>
+    <section id="back_element">
+        <p>Posted by {{user_post.username}}</p>
+    </section>
+    <div>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <strong> {{ message }} </strong>                
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+    </div>
+    <section id="back_element">   
+        {%if 'username' in session %}
+            <button><a href="{{url_for('itemEdit', id=subs.item_id)}}">Edit</a></button>
+        {% else %}
+            <button disabled="true">Edit</button>
+        {% endif %}
+        <button><a href="{{url_for('subCat', id=subs.catalogue_id)}}">Back</a></button>
+    </section>
+</section>
+
+{% include 'sidenav.html' %}
+
+{% endblock %}
